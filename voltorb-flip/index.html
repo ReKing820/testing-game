@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltorb Flip - Pokémon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>⚡ Voltorb Flip ⚡</h1>
+        
+        <div class="instructions">
+            <h2>Instrucciones:</h2>
+            <ul>
+                <li>Voltea las cartas para revelar puntos (1, 2, 3)</li>
+                <li>¡Evita los Voltorbs! Si revelas uno, pierdes</li>
+                <li>Los números arriba y a la derecha indican cuántos puntos y Voltorbs hay en cada fila/columna</li>
+                <li>Objetivo: Consigue 50 puntos o más antes de encontrar todos los Voltorbs</li>
+            </ul>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span>Puntos:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat-box">
+                <span>Nivel:</span>
+                <span id="level">1</span>
+            </div>
+        </div>
+
+        <div class="game-board">
+            <!-- Column headers -->
+            <div class="corner"></div>
+            <div class="header col-header" data-col="0">?</div>
+            <div class="header col-header" data-col="1">?</div>
+            <div class="header col-header" data-col="2">?</div>
+            <div class="header col-header" data-col="3">?</div>
+            <div class="header col-header" data-col="4">?</div>
+
+            <!-- Row 0 -->
+            <div class="header row-header" data-row="0">?</div>
+            <div class="card" data-row="0" data-col="0"></div>
+            <div class="card" data-row="0" data-col="1"></div>
+            <div class="card" data-row="0" data-col="2"></div>
+            <div class="card" data-row="0" data-col="3"></div>
+            <div class="card" data-row="0" data-col="4"></div>
+
+            <!-- Row 1 -->
+            <div class="header row-header" data-row="1">?</div>
+            <div class="card" data-row="1" data-col="0"></div>
+            <div class="card" data-row="1" data-col="1"></div>
+            <div class="card" data-row="1" data-col="2"></div>
+            <div class="card" data-row="1" data-col="3"></div>
+            <div class="card" data-row="1" data-col="4"></div>
+
+            <!-- Row 2 -->
+            <div class="header row-header" data-row="2">?</div>
+            <div class="card" data-row="2" data-col="0"></div>
+            <div class="card" data-row="2" data-col="1"></div>
+            <div class="card" data-row="2" data-col="2"></div>
+            <div class="card" data-row="2" data-col="3"></div>
+            <div class="card" data-row="2" data-col="4"></div>
+
+            <!-- Row 3 -->
+            <div class="header row-header" data-row="3">?</div>
+            <div class="card" data-row="3" data-col="0"></div>
+            <div class="card" data-row="3" data-col="1"></div>
+            <div class="card" data-row="3" data-col="2"></div>
+            <div class="card" data-row="3" data-col="3"></div>
+            <div class="card" data-row="3" data-col="4"></div>
+
+            <!-- Row 4 -->
+            <div class="header row-header" data-row="4">?</div>
+            <div class="card" data-row="4" data-col="0"></div>
+            <div class="card" data-row="4" data-col="1"></div>
+            <div class="card" data-row="4" data-col="2"></div>
+            <div class="card" data-row="4" data-col="3"></div>
+            <div class="card" data-row="4" data-col="4"></div>
+        </div>
+
+        <div class="message" id="message"></div>
+        <button id="restart-btn" class="hidden">Jugar de Nuevo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

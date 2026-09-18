@@ -1,0 +1,9 @@
+voltorb-flip/dist/
+voltorb-flip/build/
+*.log
+*.tmp
+*.swp
+.env
+.env.local
+.vscode/
+.idea/

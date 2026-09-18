@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructions {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.instructions h2 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.instructions ul {
+    list-style-position: inside;
+    color: #666;
+    line-height: 1.6;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.stat-box span:first-child {
+    margin-right: 10px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.corner {
+    background: transparent;
+}
+
+.header {
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    min-height: 50px;
+}
+
+.row-header {
+    background: #555;
+}
+
+.card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    user-select: none;
+}
+
+.card:hover:not(.revealed) {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card.revealed {
+    cursor: default;
+    transform: none;
+}
+
+.card.voltorb {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    animation: shake 0.5s;
+}
+
+.card.safe {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.message {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message.win {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+}
+
+.message.lose {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+}
+
+#restart-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 500px) {
+    .game-board {
+        gap: 4px;
+    }
+    
+    .card {
+        min-height: 45px;
+        font-size: 1.5em;
+    }
+    
+    .header {
+        min-height: 40px;
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+}
